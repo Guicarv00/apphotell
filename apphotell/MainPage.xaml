@@ -2,62 +2,102 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="apphotell.MainPage"
-             BackgroundColor="#F2F2F2">
+             BackgroundColor="#1A1A2E">
 
     <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
 
-        <VerticalStackLayout Padding="25" Spacing="15">
-
-            <Label Text="APP HOTEL"
-                   FontSize="32"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"/>
+            <VerticalStackLayout Spacing="4" Margin="0,20,0,10">
+                <Label Text="🏨 APP HOTEL"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#E94560"
+                       HorizontalOptions="Center"/>
+                <Label Text="Bem-vindo ao seu hotel"
+                       FontSize="14"
+                       TextColor="#A8A8C8"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
 
             <Image Source="hotel.png"
-                   HeightRequest="200"
+                   HeightRequest="180"
                    HorizontalOptions="Center"/>
 
-            <Entry Placeholder="Nome do hóspede"
-                   TextColor="Black"/>
+            <Border BackgroundColor="#16213E"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="#0F3460"
+                    Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="👤 Nome do Hóspede"
+                           FontAttributes="Bold"
+                           FontSize="14"
+                           TextColor="#E94560"/>
+                    <Entry Placeholder="Nome do hóspede"
+                           PlaceholderColor="#A8A8C8"
+                           TextColor="White"
+                           BackgroundColor="#0F3460"/>
+                </VerticalStackLayout>
+            </Border>
 
-            <Entry Placeholder="Quantidade de hóspedes"
-                   Keyboard="Numeric"
-                    TextColor="Black"/>
-            
+            <Border BackgroundColor="#16213E"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="#0F3460"
+                    Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="👥 Quantidade de Hóspedes"
+                           FontAttributes="Bold"
+                           FontSize="14"
+                           TextColor="#E94560"/>
+                    <Entry Placeholder="Quantidade de hóspedes"
+                           Keyboard="Numeric"
+                           PlaceholderColor="#A8A8C8"
+                           TextColor="White"
+                           BackgroundColor="#0F3460"/>
+                </VerticalStackLayout>
+            </Border>
 
-            <DatePicker Format="dd/MM/yyyy"/>
-
-            <Picker Title="Tipo de quarto"
-        TextColor="White"
-        TitleColor="Black"
-        BackgroundColor="Gray" 
-        SelectedItem="{Binding TipoQuarto, Mode=TwoWay}">
-                <Picker.Items>
-                    <x:String>Simples</x:String>
-                    <x:String>Luxo</x:String>
-                    <x:String>Premium</x:String>
-                </Picker.Items>
-            </Picker>
-
-            <Stepper Minimum="1"
-                     Maximum="10"
-                     Increment="1"/>
+            <Border BackgroundColor="#16213E"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="#0F3460"
+                    Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="🛏 Tipo de Quarto"
+                           FontAttributes="Bold"
+                           FontSize="14"
+                           TextColor="#E94560"/>
+                    <Picker Title="Tipo de quarto"
+                            TextColor="White"
+                            TitleColor="#A8A8C8"
+                            BackgroundColor="Transparent">
+                        <Picker.Items>
+                            <x:String>Simples</x:String>
+                            <x:String>Luxo</x:String>
+                            <x:String>Premium</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </VerticalStackLayout>
+            </Border>
 
             <Button Text="Reservar"
                     Clicked="OnReservarClicked"
-                    BackgroundColor="DarkBlue"
+                    BackgroundColor="#E94560"
                     TextColor="White"
-                    CornerRadius="15"/>
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="16"
+                    HeightRequest="54"
+                    Margin="0,8,0,0"/>
 
             <Button Text="Sobre"
                     Clicked="Sobre_Clicked"
-                    BackgroundColor="Red"
+                    BackgroundColor="#0F3460"
                     TextColor="White"
-                    CornerRadius="15"/>
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="16"
+                    HeightRequest="54"
+                    Margin="0,0,0,24"/>
 
         </VerticalStackLayout>
-
     </ScrollView>
-
 </ContentPage>

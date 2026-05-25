@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace apphotell.Models
 {
-    public class ReservaModel : INotifyPropertyChanged
+    public partial class ReservaModel : INotifyPropertyChanged
     {
         private string _nomeHospede = "";
         private int _numeroQuartos = 1;

@@ -15,7 +15,7 @@ public partial class MainPage : ContentPage
 
     private async void OnReservarClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Reservado✅", "Reserva realizada com sucesso!", "OK");
+        await Shell.Current.GoToAsync("ContratacaoHospedagem");
     }
 
     private async void Sobre_Clicked(object sender, EventArgs e)

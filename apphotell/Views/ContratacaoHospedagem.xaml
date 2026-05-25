@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="apphotell.Views.ContratacaoHospedagem"
+             BackgroundColor="#1A1A2E">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+
+            <!-- Título -->
+            <VerticalStackLayout Spacing="4" Margin="0,20,0,10">
+                <Label Text="🏨 Cálculo da Diária"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#E94560"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!-- Contadores -->
+            <Border BackgroundColor="#16213E"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="#0F3460"
+                    Padding="20">
+                <VerticalStackLayout Spacing="12">
+                    <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Adultos:"
+                               TextColor="White" FontSize="15"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1" x:Name="lbl_adultos"
+                               Text="0" TextColor="White" FontSize="15"
+                               VerticalOptions="Center"/>
+                        <Button Grid.Column="2" Text="-"
+                                Clicked="btn_menos_adulto"
+                                BackgroundColor="#0F3460"
+                                TextColor="White"
+                                CornerRadius="8"
+                                WidthRequest="40" HeightRequest="40"/>
+                        <Button Grid.Column="3" Text="+"
+                                Clicked="btn_mais_adulto"
+                                BackgroundColor="#E94560"
+                                TextColor="White"
+                                CornerRadius="8"
+                                WidthRequest="40" HeightRequest="40"/>
+                    </Grid>
+                    <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="12">
+                        <Label Grid.Column="0" Text="Crianças:"
+                               TextColor="White" FontSize="15"
+                               VerticalOptions="Center"/>
+                        <Label Grid.Column="1" x:Name="lbl_criancas"
+                               Text="0" TextColor="White" FontSize="15"
+                               VerticalOptions="Center"/>
+                        <Button Grid.Column="2" Text="-"
+                                Clicked="btn_menos_crianca"
+                                BackgroundColor="#0F3460"
+                                TextColor="White"
+                                CornerRadius="8"
+                                WidthRequest="40" HeightRequest="40"/>
+                        <Button Grid.Column="3" Text="+"
+                                Clicked="btn_mais_crianca"
+                                BackgroundColor="#E94560"
+                                TextColor="White"
+                                CornerRadius="8"
+                                WidthRequest="40" HeightRequest="40"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Escolha da Suíte -->
+            <Border BackgroundColor="#16213E"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="#0F3460"
+                    Padding="20">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="🛏 Escolha sua Suíte"
+                           FontAttributes="Bold"
+                           FontSize="15"
+                           TextColor="#E94560"/>
+                    <Label Text="Selecione sua Acomodação"
+                           FontSize="12"
+                           TextColor="#A8A8C8"/>
+                    <Border BackgroundColor="#0F3460"
+                            StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent"
+                            Padding="12,10">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label x:Name="lbl_quarto_selecionado"
+                                   Text="Escolha um quarto..."
+                                   TextColor="#A8A8C8"
+                                   VerticalOptions="Center"
+                                   Grid.Column="0"/>
+                            <Label Text="▼" TextColor="#E94560"
+                                   VerticalOptions="Center"
+                                   Grid.Column="1"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnEscolherQuarto"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Período da Estadia -->
+            <Border BackgroundColor="#16213E"
+                    StrokeShape="RoundRectangle 16"
+                    Stroke="#0F3460"
+                    Padding="20">
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="📅 Período da Estadia"
+                           FontAttributes="Bold"
+                           FontSize="15"
+                           TextColor="#E94560"/>
+                    <Grid ColumnDefinitions="Auto,*"
+                          RowDefinitions="Auto,Auto"
+                          ColumnSpacing="12" RowSpacing="10">
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Check-in:"
+                               TextColor="#A8A8C8" FontSize="14"
+                               VerticalOptions="Center"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1"
+                                    x:Name="dp_checkin"
+                                    TextColor="White"
+                                    BackgroundColor="#0F3460"
+                                    Format="dd/MM/yyyy"
+                                    DateSelected="dp_checkin_DateSelected"/>
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Check-out:"
+                               TextColor="#A8A8C8" FontSize="14"
+                               VerticalOptions="Center"/>
+                        <DatePicker Grid.Row="1" Grid.Column="1"
+                                    x:Name="dp_checkout"
+                                    TextColor="White"
+                                    BackgroundColor="#0F3460"
+                                    Format="dd/MM/yyyy"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botão Calcular -->
+            <Button Text="Calcular Reserva"
+                    Clicked="btn_calcular_Clicked"
+                    BackgroundColor="#E94560"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="16"
+                    HeightRequest="54"
+                    Margin="0,8,0,24"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
