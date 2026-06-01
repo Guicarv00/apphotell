@@ -3,13 +3,12 @@
     x:Class="apphotell.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:apphotell"
     xmlns:views="clr-namespace:apphotell.Views"
-    Title="apphotell">
+    Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Cadastro de Evento"
+        ContentTemplate="{DataTemplate views:CadastroEvento}"
+        Route="CadastroEvento" />
 
 </Shell>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="apphotell.Views.CadastroEvento"
+             Title="Cadastro de Evento"
+             BackgroundColor="#F2F2F2">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label Text="Cadastro de Evento"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#0F3460" />
+
+            <Label Text="Preencha os dados abaixo para cadastrar o evento"
+                   FontSize="15"
+                   HorizontalOptions="Center"
+                   TextColor="#555555" />
+
+            <Border BackgroundColor="White"
+                    Stroke="#0F3460"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="25"
+                    MaximumWidthRequest="650"
+                    HorizontalOptions="Center">
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="Nome do evento"
+                           FontAttributes="Bold"
+                           TextColor="#0F3460" />
+
+                    <Entry x:Name="txt_nome"
+                           Placeholder="Digite o nome do evento"
+                           TextColor="Black"
+                           PlaceholderColor="#777777"
+                           BackgroundColor="#F7F7F7" />
+
+                    <Label Text="Data de início"
+                           FontAttributes="Bold"
+                           TextColor="#0F3460" />
+
+                    <DatePicker x:Name="dtpck_inicio"
+                                TextColor="Black"
+                                BackgroundColor="#F7F7F7" />
+
+                    <Label Text="Data de término"
+                           FontAttributes="Bold"
+                           TextColor="#0F3460" />
+
+                    <DatePicker x:Name="dtpck_termino"
+                                TextColor="Black"
+                                BackgroundColor="#F7F7F7" />
+
+                    <Label Text="Número de participantes"
+                           FontAttributes="Bold"
+                           TextColor="#0F3460" />
+
+                    <Entry x:Name="txt_participantes"
+                           Placeholder="Digite o número de participantes"
+                           Keyboard="Numeric"
+                           TextColor="Black"
+                           PlaceholderColor="#777777"
+                           BackgroundColor="#F7F7F7" />
+
+                    <Label Text="Local do evento"
+                           FontAttributes="Bold"
+                           TextColor="#0F3460" />
+
+                    <Entry x:Name="txt_local"
+                           Placeholder="Digite o local do evento"
+                           TextColor="Black"
+                           PlaceholderColor="#777777"
+                           BackgroundColor="#F7F7F7" />
+
+                    <Label Text="Custo por participante"
+                           FontAttributes="Bold"
+                           TextColor="#0F3460" />
+
+                    <Entry x:Name="txt_custo"
+                           Placeholder="Digite o custo por participante"
+                           Keyboard="Numeric"
+                           TextColor="Black"
+                           PlaceholderColor="#777777"
+                           BackgroundColor="#F7F7F7" />
+
+                    <Button Text="Cadastrar Evento"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#0F3460"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="15"
+                            HeightRequest="52"
+                            Margin="0,15,0,0" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

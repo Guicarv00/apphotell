@@ -1,0 +1,81 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="apphotell.Views.ResumoEvento"
+             Title="Resumo do Evento"
+             BackgroundColor="#F2F2F2">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label Text="Resumo do Evento"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#0F3460" />
+
+            <Label Text="Confira abaixo os dados cadastrados"
+                   FontSize="15"
+                   HorizontalOptions="Center"
+                   TextColor="#555555" />
+
+            <Border BackgroundColor="White"
+                    Stroke="#0F3460"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="25"
+                    MaximumWidthRequest="650"
+                    HorizontalOptions="Center">
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="{Binding NomeEvento, StringFormat='Nome do evento: {0}'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding DataInicio, StringFormat='Data de início: {0:dd/MM/yyyy}'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding DataTermino, StringFormat='Data de término: {0:dd/MM/yyyy}'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding DuracaoEmDias, StringFormat='Duração: {0} dia(s)'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding LocalEvento, StringFormat='Local: {0}'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='Custo por participante: R$ {0:F2}'}"
+                           FontSize="18"
+                           TextColor="#333333" />
+
+                    <Label Text="{Binding CustoTotal, StringFormat='Custo total: R$ {0:F2}'}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+              x             TextColor="#0F3460" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Button Text="Voltar"
+                    Clicked="Button_Clicked"
+                    BackgroundColor="#333333"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="15"
+                    HeightRequest="52"
+                    MaximumWidthRequest="650"
+                    HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
